@@ -8,7 +8,7 @@ poke_colors = ((220,220,20,255),(150,150,255,255),(0,255,0,255),(220,200,255,255
                (255,100,255,255), (200,0,255,255), (0,180,255,255))
 
 def get_code(data : str):
-    encoded_data = urllib.parse.quote(data)  # Encodage des caractères spéciaux
+    encoded_data = urllib.parse.quote(data)
 
     api_url = f"https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={encoded_data}"
 
@@ -24,6 +24,12 @@ def get_pixels(img : Image):
              pixdata.append(pix)
      return pixdata
 
+'''
+@brief génére un code-qr prenant la forme de la template du célébre meme "who's that pokemon"
+l'image générée est enregistrée sous le nom "res.png" dans le dossier qr_code
+@param data la chaine de caractère à encoder dans la code-qr
+@return un tuple contenant un objet Image Pillow et le code integer du pokémon représenté
+'''
 def generate_QR(data : str):
      
      while len(data)<174:
@@ -57,5 +63,6 @@ def generate_QR(data : str):
      new_img.putdata(new_pix)
 
      bg.paste(new_img, (35,35))
-     
-     bg.show()
+
+     bg.save("qr_code/res.png")
+     return (bg, poke)
