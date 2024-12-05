@@ -6,4 +6,4 @@ from  .models import PartieDuCorps
 class PartieDuCorpsSerializer(serializers.ModelSerializer):
     class Meta:
         model = PartieDuCorps
-        fields = ('id', 'nom', 'svg_id')
+        fields = ('id', 'nom', 'svg_id', 'title', 'description', 'image')
