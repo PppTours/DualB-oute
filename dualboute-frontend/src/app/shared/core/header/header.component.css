@@ -1,5 +1,5 @@
 header {
-  background-color: #162751;
+  background-color: #080e1e;
   color: white;
   width: 100%;
   height: auto;
@@ -28,9 +28,9 @@ header {
 }
 
 .link button {
-  background-color: #162751;
+  background-color: #080e1e;
   color: white;
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
