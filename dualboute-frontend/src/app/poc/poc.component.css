@@ -1,0 +1,41 @@
+.showElement {
+    opacity: 1; 
+    visibility: visible; 
+    transition: opacity 0.2s ease;
+}
+
+.hideElement {
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.2s ease, visibility 0s 0.2s;
+}
+
+.informations {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.informations .close {
+    color: white;
+    width: 90%;
+    background-color: #162751;
+    text-align: center;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+@media (min-width: 700px) {
+    .informations {
+        max-width: 500px;
+
+    }
+}
