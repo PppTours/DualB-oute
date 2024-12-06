@@ -59,12 +59,6 @@ export class PocComponent implements OnInit, AfterViewInit {
             element.addEventListener('click', (event) => {
               this.loadInformations(event);
             });
-            const allChildren = element.querySelectorAll('*');
-            allChildren.forEach((child) => {
-              child.addEventListener('click', (event) => {
-                this.loadInformations(event);
-              });
-            });
           });
         }
       }
