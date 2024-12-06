@@ -51,14 +51,22 @@ export class PocComponent implements OnInit, AfterViewInit {
     }
     if (this.svgElement && this.data) {
       const svg = this.svgElement.nativeElement;
+      const tooltip = document.getElementById('tooltip');
       for (let item of this.data) {
-        const elements = svg.querySelector(`#${item.svg_id}`);
+        const elements = svg.querySelectorAll(`#${item.svg_id}`);
         if (elements) {
-          elements.addEventListener('click', (event) => {
-            this.loadInformations(event);
+          elements.forEach((element) => {
+            element.addEventListener('click', (event) => {
+              this.loadInformations(event);
+            });
+            const allChildren = element.querySelectorAll('*');
+            allChildren.forEach((child) => {
+              child.addEventListener('click', (event) => {
+                this.loadInformations(event);
+              });
+            });
           });
         }
-
       }
     }
   }
@@ -75,7 +83,6 @@ export class PocComponent implements OnInit, AfterViewInit {
   loadInformations(event: Event): void {
     if (event.target !== null) {
       const element = event.target as HTMLElement;
-      console.log(this.data.length);
       for (let i = 0; i < this.data.length; i++) {
         if (this.data[i].svg_id == element.id) {
           console.log(this.data[i]);
