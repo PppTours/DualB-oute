@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="400" height="800">
+    <circle cx="100" cy="50" r="30" fill="#FDD7B5" stroke="#000" stroke-width="2" id="tete" (click)="loadInformations($event)"></circle>
+    <rect x="85" y="80" width="30" height="20" fill="#FDD7B5" stroke="#000" stroke-width="2" id="cou" (click)="loadInformations($event)"></rect>
+    <rect x="70" y="100" width="60" height="100" fill="#6FA8DC" stroke="#000" stroke-width="2" id="torse" (click)="loadInformations($event)"></rect>
+    <rect x="30" y="100" width="20" height="80" fill="#FDD7B5" stroke="#000" stroke-width="2" id="bras-gauche" (click)="loadInformations($event)"></rect>
+    <rect x="150" y="100" width="20" height="80" fill="#FDD7B5" stroke="#000" stroke-width="2" id="bras-droit" (click)="loadInformations($event)"></rect>
+    <rect x="70" y="200" width="60" height="40" fill="#F4A460" stroke="#000" stroke-width="2" id="hanche" (click)="loadInformations($event)"></rect>
+    <rect x="75" y="240" width="20" height="100" fill="#FDD7B5" stroke="#000" stroke-width="2" id="jambe-gauche" (click)="loadInformations($event)"></rect>
+    <rect x="105" y="240" width="20" height="100" fill="#FDD7B5" stroke="#000" stroke-width="2" id="jambe-droite" (click)="loadInformations($event)"></rect>
+    <rect x="70" y="340" width="30" height="15" fill="#6B4423" stroke="#000" stroke-width="2" id="pied-gauche" (click)="loadInformations($event)"></rect>
+    <rect x="100" y="340" width="30" height="15" fill="#6B4423" stroke="#000" stroke-width="2" id="pied-droit" (click)="loadInformations($event)"></rect>
+</svg>
+
+<div id="informations" [className]="(show === true ? 'showElement' : 'hideElement') + ' informations'">
+    <h2 class="title">{{title}}</h2>
+    <img class="illustration" src="{{media}}" alt="Image">
+    <p class="description">{{description}}</p>
+    <div class="close" (click)="closeInformation()">Fermer</div>
+</div>
